@@ -1,0 +1,1 @@
+BASE_DIR = '/home/apoorva/bootcamp/search-engine/search_engine/'

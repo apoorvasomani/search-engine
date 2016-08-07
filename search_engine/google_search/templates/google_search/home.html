@@ -1,0 +1,21 @@
+{% extends 'google_search/base.html' %}
+
+{% block title %}
+Search Engine
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}google_search/css/event.css" />
+{% endblock %}
+
+{% block content %}
+    <div class='search-bar'>
+        <input class='search-text' type='text'>
+        <button class='search-button' url= '{% url search_item %}'>Search</button>
+    </div>
+    <div class='search-result'></div>
+{% endblock %}
+
+{% block bodyscript %}
+    <script type = "text/javascript" src = "{{ STATIC_URL }}google_search/js/event.js"></script>
+{% endblock %}
