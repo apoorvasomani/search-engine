@@ -1,5 +1,11 @@
 # README #
 
+** Overview **
+
+A search engine similar to Google Search built using the Google Custom Search API.
+
+** Steps **
+
 1) Run the following in terminal:
        
 ```
