@@ -11,7 +11,9 @@ def google_search(search_term, **kwargs):
 	Google Custom Search API call.
 	"""
 	service = build("customsearch", "v1",developerKey=GOOGLE_API_KEY)
-	result = service.cse().list(q=search_term,cx=GOOGLE_CSE_KEY,).execute()['items']
+	result = service.cse().list(q=search_term,cx=GOOGLE_CSE_KEY,)
+	result = result.execute()
+	result = result['items']
 	return result
 
 
@@ -39,3 +41,4 @@ def search_item(request):
 
 	ctx = RequestContext(request, ctx)
 	return render_to_response(template, ctx)
+	

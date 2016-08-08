@@ -7,3 +7,4 @@ class SearchRecord(models.Model):
 	ip_address = models.IPAddressField()
 	search_query = models.CharField(max_length=500)
 	timestamp = models.DateTimeField(auto_now=True)
+	
