@@ -1,21 +1,16 @@
 <div>
 	{% for item in result %}
-		<br>
-
-		<a class='url-heading' href='{{ item.link }}'> {{ item.title }} </a>
-
-		<div class='url-path'>
-			{{ item.formattedUrl }}
+		<div class='search-result-item'>
+			<a class='url-heading' href='{{ item.link }}'> {{ item.title }} </a>
+			<div class='url-path'>
+				{{ item.formattedUrl }}
+			</div>
+			<div class='url-description'>
+				{{ item.snippet }}
+			</div>
+			<div class='url-date'>
+				{{ item.datepublished }}
+			</div>
 		</div>
-
-		<div class='url-description'>
-			{{ item.snippet }}
-		</div>
-
-		<div class='url-date'>
-			{{ item.datepublished }}
-		</div>
-
-		<br>
 	{% endfor %}
 </div>

@@ -10,14 +10,19 @@ Search Engine
 
 {% block content %}
 	<div class='search-bar'>
-		<input class='search-text' type='text'>
-		<button class='search-button' url= '{% url search_item %}'>Search</button>
+		<input class='search-text' type='text' placeholder='Search..'>
+		<div class='search-button' url= '{% url search_item %}'>
+			<i class='fa fa-search'></i>
+		</div>
 	</div>
-	<div class='search-result'></div>
+	<div class='search-result'>
+		<div class="loading-image"></div>
+		<div class='search-items'></div>
+	</div>
 
 	<div class='video-player ui-widget-content'>
 		<i class='player-close fa fa-close'></i>
-		<input class='video-url' type='text'>
+		<input class='video-url' type='text' placeholder="Paste URL here..">
 		<iframe id="player" type="text/html" src='https://www.youtube.com/embed/M' frameborder="0" allowfullscreen></iframe>
 		<i class='player-move fa fa-hand-stop-o'></i>
 		<div class='error-msg hidden'></div>
@@ -34,5 +39,8 @@ Search Engine
 {% endblock %}
 
 {% block bodyscript %}
+	<script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 	<script type = "text/javascript" src = "{{ STATIC_URL }}google_search/js/event.js"></script>
 {% endblock %}

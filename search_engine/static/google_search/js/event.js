@@ -66,11 +66,15 @@ $('.video-url').on('change', function(){
 $('.video-bar').on('click',function(){
 	if($('.video-player').css('display') == 'none') {
 		$('.video-player').show();
-		player.playVideo();
+		if(player.playVideo){
+			player.playVideo();
+		}
 	}
 	else {
 		$('.video-player').hide();
-		player.pauseVideo();
+		if(player.pauseVideo){
+			player.pauseVideo();
+		}
 	}
 });
 
