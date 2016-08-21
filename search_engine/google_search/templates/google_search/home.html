@@ -9,13 +9,30 @@ Search Engine
 {% endblock %}
 
 {% block content %}
-    <div class='search-bar'>
-        <input class='search-text' type='text'>
-        <button class='search-button' url= '{% url search_item %}'>Search</button>
-    </div>
-    <div class='search-result'></div>
+	<div class='search-bar'>
+		<input class='search-text' type='text'>
+		<button class='search-button' url= '{% url search_item %}'>Search</button>
+	</div>
+	<div class='search-result'></div>
+
+	<div class='video-player ui-widget-content'>
+		<i class='player-close fa fa-close'></i>
+		<input class='video-url' type='text'>
+		<iframe id="player" type="text/html" src='https://www.youtube.com/embed/M' frameborder="0" allowfullscreen></iframe>
+		<i class='player-move fa fa-hand-stop-o'></i>
+		<div class='error-msg hidden'></div>
+	</div>
+
+	<div class='sticky-note ui-widget-content'>
+		<textarea class='note'></textarea>
+	</div>
+
+	<div class='side-bar'>
+		<div class='video-bar fa fa-youtube-play margin-bottom-10'></div>
+		<div class='note-bar fa fa-sticky-note-o margin-bottom-10'></div>
+	</div>
 {% endblock %}
 
 {% block bodyscript %}
-    <script type = "text/javascript" src = "{{ STATIC_URL }}google_search/js/event.js"></script>
+	<script type = "text/javascript" src = "{{ STATIC_URL }}google_search/js/event.js"></script>
 {% endblock %}
