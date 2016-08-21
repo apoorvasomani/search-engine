@@ -4,10 +4,15 @@
 
 A search engine similar to Google Search built using the Google Custom Search API.
 
+** What's New **
+
+1) Draggable & Resizable Youtube Player.
+2) Sticky Notes.
+
 ** Steps **
 
 1) Run the following in terminal:
-       
+
 ```
 #!shell
 
