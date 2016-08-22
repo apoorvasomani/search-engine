@@ -5,6 +5,7 @@ from django.template import RequestContext
 
 from .constants import GOOGLE_API_KEY, GOOGLE_CSE_KEY
 from .models import SearchRecord
+from .utils import check_for_youtube_url
 
 def google_search(search_term, **kwargs):
 	"""
@@ -14,6 +15,10 @@ def google_search(search_term, **kwargs):
 	result = service.cse().list(q=search_term,cx=GOOGLE_CSE_KEY,)
 	result = result.execute()
 	result = result['items']
+
+	for item in result:
+		item['is_youtube_url'] = check_for_youtube_url(item['formattedUrl'])
+
 	return result
 
 
@@ -41,4 +46,3 @@ def search_item(request):
 
 	ctx = RequestContext(request, ctx)
 	return render_to_response(template, ctx)
-	

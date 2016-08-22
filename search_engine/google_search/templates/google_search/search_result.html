@@ -3,7 +3,7 @@
 		<div class='search-result-item'>
 			<a class='url-heading' href='{{ item.link }}'> {{ item.title }} </a>
 			<div class='url-path'>
-				{{ item.formattedUrl }}
+				{% if item.is_youtube_url %}<span class='play-video-link fa fa-play-circle' url={{ item.formattedUrl }}></span>{% endif %} {{ item.formattedUrl }}
 			</div>
 			<div class='url-description'>
 				{{ item.snippet }}
