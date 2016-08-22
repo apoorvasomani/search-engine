@@ -1,8 +1,10 @@
+// Initialize Youtube IFrame API
 var tag = document.createElement('script');
 tag.src = "//www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
+
 function onYouTubeIframeAPIReady() {
 	player = new YT.Player('player');
 }
@@ -17,12 +19,13 @@ $('.search-button').click(function() {
 	}
 
 	$.ajax({
-			url: url,
-			type: 'POST',
-			data: data,
-			success: function(result) {
-				$('.search-result').html(result);
-    }});
+		url: url,
+		type: 'POST',
+		data: data,
+		success: function(result) {
+			$('.search-result').html(result);
+		}
+	});
 });
 
 $(function() {
