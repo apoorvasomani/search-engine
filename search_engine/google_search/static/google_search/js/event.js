@@ -132,4 +132,5 @@ $('.note').on('input', function(){
 $(document).on('dblclick','.search-result-item',function(){
 	var str = "\n" + $(this).find('.url-heading').html() + " - " + $(this).find('.url-path').html() + "\n";
 	$('.note').append(str);
+	$('.note').trigger('input');
 });
