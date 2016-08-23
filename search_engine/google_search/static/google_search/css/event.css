@@ -128,7 +128,7 @@ body {
 	width: 400px;
 	height: 300px;
 	z-index: 10;
-	position: absolute;
+	position: fixed;
 	top: 200px;
 	left: 100px;
 	border-top-right-radius: 3px;
@@ -239,7 +239,7 @@ body {
 	width: 200px;
 	height: 150px;
 	z-index: 10;
-	position: absolute;
+	position: fixed;
 	top: 150px;
 	right: 100px;
 	border-top-right-radius: 3px;
