@@ -28,6 +28,9 @@ $('.search-button').click(function() {
 			}
 		});
 	}
+	else {
+		$('.search-result').empty();
+	}
 });
 
 $(function() {
