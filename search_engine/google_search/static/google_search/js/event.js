@@ -11,21 +11,23 @@ $('.search-button').click(function() {
 	var url = $(this).attr('url');
 	var search_query = $('.search-text').val();
 
-	var data = {
-		csrfmiddlewaretoken: csrf_token,
-		search_query: search_query
-	}
+	if(search_query.length != 0){
+		var data = {
+			csrfmiddlewaretoken: csrf_token,
+			search_query: search_query
+		}
 
-	$('.loading-image').show();
-	setTimeout(function(){}, 44000);
-	$.ajax({
+		$('.loading-image').show();
+		$.ajax({
 			url: url,
 			type: 'POST',
 			data: data,
 			success: function(result) {
 				$('.search-items').html(result);
 				$('.loading-image').hide();
-    }});
+			}
+		});
+	}
 });
 
 $(function() {
